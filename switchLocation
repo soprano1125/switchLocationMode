@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+if [ $# -eq 1 ]; then
+	mode=$1
+
+else
+	echo "usage : $0 <fake,real>"
+	exit 1
+fi
+
+cp "com.apple.Maps.plist."$mode"Location" ../Library/Preferences/com.apple.Maps.plist 
+
+echo "switched Location mode.[$mode]"
+echo "please reboot this device."
+
